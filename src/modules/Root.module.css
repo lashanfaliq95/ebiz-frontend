@@ -1,0 +1,12 @@
+.root__div {
+    height: 100%;
+    box-sizing: border-box;
+    border: 2px solid red;
+}
+
+.main__div {
+    height: 100%;
+    overflow-y: auto;
+    border: 2px solid blue;
+    box-sizing: border-box;
+}
