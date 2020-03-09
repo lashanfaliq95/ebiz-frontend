@@ -1,11 +1,9 @@
-import React from 'react';
+import React from "react";
 
-import Root from './modules/Root';
+import Root from "./modules/Root";
 
 function App() {
-  return (
-    <Root />
-  );
+  return <Root />;
 }
 
 export default App;
