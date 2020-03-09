@@ -76,13 +76,16 @@ const Card = props => {
             </div>
           )}
           {details.phoneNumber && (
-            <div
-              className={styles.icon__div}
-              onClick={onClickCopyToClipBoard}
-              data-text={details.phoneNumber}
+            <a
+              href={
+                "https://api.whatsapp.com/send?text=" + window.location.href
+              }
+              data-action="share/whatsapp/share"
             >
-              <FaWhatsapp size={25} color="black" />
-            </div>
+              <div className={styles.icon__div}>
+                <FaWhatsapp size={25} color="black" />
+              </div>
+            </a>
           )}
           {details.email && (
             <div
