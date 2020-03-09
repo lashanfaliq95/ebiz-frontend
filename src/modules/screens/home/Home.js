@@ -13,7 +13,6 @@ const Home = props => {
 
   const onClickSubmit = values => {
     setLoading(true);
-    console.log("clicked", values);
     const postData = {
       ...values,
       email: values.emailAddress,
@@ -30,8 +29,7 @@ const Home = props => {
       .then(res => res.text())
       .then(data => {
         setLoading(false);
-        console.log("/" + data);
-        this.props.history.push("/" + data);
+        props.history.push("/" + data);
       })
       .catch(err => {
         setLoading(false);
