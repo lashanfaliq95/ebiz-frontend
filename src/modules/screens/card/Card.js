@@ -1,12 +1,17 @@
-import React from 'react';
+import React from "react";
+import { withRouter } from "react-router-dom";
 
-import { FaPhone, FaWhatsapp } from 'react-icons/fa';
-import { AiOutlineMail, AiFillFacebook, AiOutlineInstagram } from 'react-icons/ai';
-import { GoLocation } from 'react-icons/go';
-import { IoMdGlobe } from 'react-icons/io';
+import { FaPhone, FaWhatsapp } from "react-icons/fa";
+import {
+  AiOutlineMail,
+  AiFillFacebook,
+  AiOutlineInstagram
+} from "react-icons/ai";
+import { GoLocation } from "react-icons/go";
+import { IoMdGlobe } from "react-icons/io";
 
-import logo from '../../static/brand.png';
-import styles from './Card.module.css';
+import logo from "../../static/brand.png";
+import styles from "./Card.module.css";
 
 const Card = props => {
   return (
@@ -57,4 +62,4 @@ const Card = props => {
   );
 };
 
-export default Card;
+export default withRouter(Card);

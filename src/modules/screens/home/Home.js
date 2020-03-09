@@ -1,4 +1,6 @@
 import React, { useState } from "react";
+import { withRouter } from "react-router-dom";
+
 import { Formik, Form } from "formik";
 
 import { AppInput, AppButton } from "../../components";
@@ -12,16 +14,24 @@ const Home = props => {
   const onClickSubmit = values => {
     setLoading(true);
     console.log("clicked", values);
+    const postData = {
+      ...values,
+      email: values.emailAddress,
+      name: values.firstName + values.lastName
+    };
     fetch("http://localhost:8080/api/", {
       method: "post",
       headers: {
         Accept: "application/json",
         "Content-Type": "application/json"
       },
-      body: JSON.stringify(values)
+      body: JSON.stringify(postData)
     })
-      .then(res => {
+      .then(res => res.text())
+      .then(data => {
         setLoading(false);
+        console.log("/" + data);
+        this.props.history.push("/" + data);
       })
       .catch(err => {
         setLoading(false);
@@ -183,4 +193,4 @@ const Home = props => {
   );
 };
 
-export default Home;
+export default withRouter(Home);
