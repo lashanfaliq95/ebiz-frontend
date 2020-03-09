@@ -58,7 +58,11 @@ const Card = props => {
             </div>
           </div>
           <div className={styles.image__div}>
-            <img src={logo} className={styles.brand__logo} alt="logo" />
+            <img
+              src={details.image || logo}
+              className={styles.brand__logo}
+              alt="logo"
+            />
           </div>
         </div>
         <div className={styles.footer__div}>

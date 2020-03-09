@@ -16,7 +16,8 @@ const Home = props => {
     const postData = {
       ...values,
       email: values.emailAddress,
-      name: values.firstName + values.lastName
+      name: values.firstName + values.lastName,
+      image: values.imageUrl
     };
     fetch("http://localhost:8080/api/", {
       method: "post",
