@@ -13,11 +13,13 @@ const Home = props => {
 
   const onClickSubmit = values => {
     setLoading(true);
+    console.log(values);
     const postData = {
       ...values,
       email: values.emailAddress,
       name: values.firstName + values.lastName,
-      image: values.imageUrl
+      image: values.imageUrl,
+      whatsAppNumber: values.whatsappNumber
     };
     fetch("http://localhost:8080/api/", {
       method: "post",

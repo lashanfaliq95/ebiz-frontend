@@ -34,6 +34,7 @@ const Card = props => {
     })
       .then(res => res.json())
       .then(data => {
+        console.log(data);
         setDetails(data);
       })
       .catch(err => {
@@ -75,7 +76,7 @@ const Card = props => {
               <FaPhone size={25} color="black" />
             </div>
           )}
-          {details.phoneNumber && (
+          {details.whatsAppNumber && (
             <a
               href={
                 "https://api.whatsapp.com/send?text=" + window.location.href
